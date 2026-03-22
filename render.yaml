@@ -1,0 +1,15 @@
+# Render deployment
+# 1. Fork this repo on GitHub
+# 2. Go to render.com → New → Web Service
+# 3. Connect your GitHub repo
+# 4. Set:
+#    Build Command: pip install -r requirements.txt
+#    Start Command: python bot.py
+# 5. Add environment variables in Render dashboard:
+#    TELEGRAM_TOKEN = your_bot_token
+#    OPENROUTER_API_KEY = your_openrouter_key
+
+runtime = "python314"
+buildCommand = "pip install -r requirements.txt"
+startCommand = "python bot.py"
+healthCheckPath = "/"

@@ -1,0 +1,14 @@
+# Railway deployment
+# 1. Fork this repo on GitHub
+# 2. Connect repo to railway.app
+# 3. Add environment variables:
+#    TELEGRAM_TOKEN = your_bot_token
+#    OPENROUTER_API_KEY = your_openrouter_key
+# 4. Deploy — Railway auto-detects Python
+
+build_command = "pip install -r requirements.txt"
+start_command = "python bot.py"
+
+[healthCheck]
+path = "/"
+port = 8000
