@@ -33,20 +33,20 @@ OPENROUTER_BASE = "https://openrouter.ai/api/v1/chat/completions"
 
 # Free models
 FREE_MODELS = {
-    "Llama 3.1": "meta-llama/llama-3.1-8b-instruct:free",
-    "Mistral 7B": "mistralai/mistral-7b-instruct:free",
-    "DeepSeek R1": "deepseek/deepseek-r1:free",
-    "Gemma 3": "google/gemma-3-4b-it:free",
+    "Gemma 3 (Google)": "google/gemma-3-4b-it:free",
+    "Dolphin 24B": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+    "Qwen3 80B": "qwen/qwen3-next-80b-a3b-instruct:free",
+    "Nemotron 120B": "nvidia/nemotron-3-super-120b-a12b:free",
 }
 
 MODEL_DISPLAY = {
-    "meta-llama/llama-3.1-8b-instruct:free": "Llama 3.1",
-    "mistralai/mistral-7b-instruct:free": "Mistral 7B",
-    "deepseek/deepseek-r1:free": "DeepSeek R1",
-    "google/gemma-3-4b-it:free": "Gemma 3",
+    "google/gemma-3-4b-it:free": "Gemma 3 (Google)",
+    "cognitivecomputations/dolphin-mistral-24b-venice-edition:free": "Dolphin 24B",
+    "qwen/qwen3-next-80b-a3b-instruct:free": "Qwen3 80B",
+    "nvidia/nemotron-3-super-120b-a12b:free": "Nemotron 120B",
 }
 
-DEFAULT_MODEL = "meta-llama/llama-3.1-8b-instruct:free"
+DEFAULT_MODEL = "google/gemma-3-4b-it:free"
 
 # ─── Memory ───────────────────────────────────────────────────────────────────
 MAX_TURNS = 20
@@ -194,10 +194,10 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "`/project <topic>` — Topic-specific project ideas\n"
         "`  e.g. /project NLP`\n\n"
         "*Free Models Available*\n"
-        "• Llama 3.1 (Meta)\n"
-        "• Mistral 7B\n"
-        "• DeepSeek R1\n"
-        "• Gemma 3 (Google)",
+        "• Gemma 3 (Google) — lightweight & fast\n"
+        "• Dolphin 24B — strong reasoning\n"
+        "• Qwen3 80B — powerful, larger model\n"
+        "• Nemotron 120B — top-tier free model",
         parse_mode=ParseMode.MARKDOWN,
     )
 
