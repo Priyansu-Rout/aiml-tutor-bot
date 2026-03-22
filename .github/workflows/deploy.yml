@@ -1,0 +1,22 @@
+name: Deploy to Railway
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Push to Railway via API
+        run: |
+          curl -s -X POST https://api.railway.app/v0/graphql \
+            -H "Authorization: Bearer ${{ secrets.RAILWAY_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "query": "mutation { createDeployment(input: { serviceId: \"${{ secrets.RAILWAY_SERVICE_ID }}\", environmentId: \"${{ secrets.RAILWAY_ENV_ID }}\", gitHubOwner: \"Priyansu-Rout\", gitHubRepo: \"aiml-tutor-bot\", gitHubBranch: \"main\" }) { deployment { id } } }"
+            }'
