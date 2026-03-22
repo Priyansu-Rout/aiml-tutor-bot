@@ -1,0 +1,20 @@
+# Environment — NEVER commit secrets
+.env
+
+# Byte-compiled
+__pycache__/
+*.py[cod]
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# OpenClaw workspace files
+.openclaw/
+
+# Logs
+*.log
